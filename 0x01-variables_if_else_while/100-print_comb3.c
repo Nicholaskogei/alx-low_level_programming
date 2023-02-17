@@ -1,28 +1,29 @@
-#include <stdlib.h>
 #include <stdio.h>
-
+#include <unistd.h>
 /**
-* main - Prints the digits of the decimal number system using putchar
-*
-* Return: 0 when code executes succesfully
-*/
-
+ * main - Entyr point
+ * Description: prints two digits combination
+ * Return: Always 0 (success)
+ */
 int main(void)
 {
-	int a, b;
+	int c, i;
 
-	for (a = 0; a < 10; a++)
+	for (c = '0'; c <= '9'; c++)
 	{
-		for (b = 0; b < 10; b++)
+		for (i = '0'; i <= '9'; i++)
 		{
-			putchar(a + '0');
-			putchar(b + '0');
-			if (a == 9 && b == 9)
+			if (c < i)
 			{
-				break;
+				putchar(c);
+				putchar(i);
+
+				if (c != '8' || (c == '8' && i != '9'))
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
-				putchar(',');
-				putchar(' ');
 		}
 	}
 	putchar('\n');
